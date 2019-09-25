@@ -11,7 +11,7 @@ resource "aws_iam_role" "kube-master" {
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
       "Principal": {
-        "Service": "ec2.amazonaws.com"
+        "Service": "ec2.amazonaws.com.cn"
       }
       }
   ]
@@ -30,7 +30,7 @@ resource "aws_iam_role" "kube-worker" {
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
       "Principal": {
-        "Service": "ec2.amazonaws.com"
+        "Service": "ec2.amazonaws.com.cn"
       }
       }
   ]
@@ -67,7 +67,7 @@ resource "aws_iam_role_policy" "kube-master" {
       "Effect": "Allow",
       "Action": "s3:*",
       "Resource": [
-        "arn:aws:s3:::kubernetes-*"
+        "arn:aws-cn:s3:::kubernetes-*"
       ]
     }
   ]
@@ -87,7 +87,7 @@ resource "aws_iam_role_policy" "kube-worker" {
           "Effect": "Allow",
           "Action": "s3:*",
           "Resource": [
-            "arn:aws:s3:::kubernetes-*"
+            "arn:aws-cn:s3:::kubernetes-*"
           ]
         },
         {
